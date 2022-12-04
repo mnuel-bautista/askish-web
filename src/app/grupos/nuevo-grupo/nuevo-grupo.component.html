@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Crear nuevo grupo</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Nuevo Grupo</mat-label>
+        <input matInput [formControl]="nameFormControl">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button cdkFocusInitial>Cancelar</button>
+    <button mat-button (click)="createGroup()">Crear grupo</button>
+</div>

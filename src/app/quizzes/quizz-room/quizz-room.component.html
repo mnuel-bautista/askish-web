@@ -1,0 +1,40 @@
+<div class="container">
+    <div>
+        <h1>{{quizzRoom?.question?.question}}</h1>
+        <h2>{{quizzRoom?.quiz?.name}}</h2>
+    </div>
+    <ng-container *ngIf="quizzRoom?.question?.status == 'In Progress' || quizzRoom?.question?.status == null; else showResults">
+        <ul>
+            <li *ngFor="let answer of answers">
+                <div>
+                    <span>{{answer[0]}}</span>
+                    <p>{{answer[1]}}</p>
+                </div>
+            </li>
+        </ul>
+    </ng-container>
+    <ng-template #showResults>
+        <div class="results-container">
+            <div class="correct-answer">
+                <p class="correct">{{getCorrectAnswer()}}</p>
+                <p class="description">{{this.quizzRoom?.question?.description}}</p>
+            </div>
+            <canvas baseChart [type]="'pie'" [labels]="resultsLabels" [datasets]="results" [legend]="true">
+
+            </canvas>
+        </div>
+    </ng-template>
+    <div class="footer">
+        <p>Respuestas 10/12</p>
+        <button mat-raised-button color="primary"
+            *ngIf="currentQuestion == quizz?.questions?.length && quizzRoom?.question?.status == 'Completed'; else continue"
+            (click)="finishQuizzRoom()">Finalizar</button>
+        <ng-template #continue>
+            <button mat-raised-button color="primary" *ngIf="quizzRoom?.question?.status == 'In Progress'; else next"
+                (click)="markQuestionAsCompleted()">Continuar</button>
+            <ng-template #next>
+                <button mat-raised-button color="primary" (click)="setQuestion()">Siguiente pregunta</button>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<main>
+  <div class="side-container">
+    <img src="\assets\login_signup_illustration.svg" alt="">
+    <p class="create-quiz-title">Crea cuestionarios interactivos</p>
+    <p class="create-quiz-des">Un entorno de aprendizaje atractivo para sus alumnos basados en cuestionarios </p>
+  </div>
+  <div class="login-container">
+    <mat-card>
+      <mat-card-title>Iniciar sesión</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+              placeholder="Ex. pat@example.com">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Introduce una dirección de correo valida
+            </mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Escribe el correo electrónico
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput [formControl]="passwordControl">
+            <mat-error *ngIf="passwordControl.hasError('required')">
+              Escribe la contraseña
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <div class="action-buttons">
+        <button mat-raised-button color="primary" (click)="login()">Iniciar sesión</button>
+        <button mat-stroked-button color="primary" routerLink="/signup">Crear cuenta</button>
+      </div>
+    </mat-card>
+  </div>
+</main>

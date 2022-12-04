@@ -1,0 +1,45 @@
+<mat-drawer-container class="example-container" style="min-height: 100vh">
+    <mat-drawer mode="side" opened>
+        <img src="assets/app_icon_web.svg" alt="">
+        <p class="groups-title">Grupos</p>
+        <button mat-raised-button color="primary" (click)="createGroup()">Nuevo grupo</button>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let gp of grupos" [ngClass]="{'group-selected': gp == group}"
+                (click)="showGroupQuizzes(gp)"> {{ gp.name }} </a>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content style="max-height: 100vh">
+        <div>
+            <div class="top-bar">
+                <p class="welcome">Bienvenido, <span>{{userName}}</span></p>
+                <button mat-stroked-button color="primary" (click)="showGroupCode(this.group?.code ?? '')">Mostrar
+                    código</button>
+            </div>
+            <ng-container *ngIf="cuestionarios.length > 0; else noQuizzes">
+                <div class="questions-container">
+                    <ng-container *ngFor="let cuestionario of cuestionarios">
+                        <mat-card>
+                            <mat-card-title class="mat-subheading-2">{{ cuestionario?.name }}</mat-card-title>
+                            <mat-card-subtitle>{{ 10 }} pregunta(s)</mat-card-subtitle>
+                            <mat-card-actions align="end">
+                                <button mat-stroked-button color="primary" (click)="startRoom(cuestionario)">Iniciar
+                                    sala</button>
+                            </mat-card-actions>
+                        </mat-card>
+                    </ng-container>
+                </div>
+            </ng-container>
+            <ng-template #noQuizzes>
+                <div class="no-quizzes">
+                    <img src="assets\undraw_quiz.svg">
+                    <p>Añade un nuevo cuestionario para empezar</p>
+                    <button mat-raised-button color="primary" routerLink="/cuestionarios/crear">Crear nuevo cuestionario</button>
+                </div>
+            </ng-template>
+        </div>
+        <button *ngIf="cuestionarios.length > 0" routerLink="/cuestionarios/crear" mat-fab color="primary"
+            aria-label="Example icon button with a delete icon">
+            <mat-icon>add</mat-icon>
+        </button>
+    </mat-drawer-content>
+</mat-drawer-container>

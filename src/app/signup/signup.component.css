@@ -1,0 +1,67 @@
+main {
+    display: flex; 
+    flex-direction: row;
+    height: 100%;
+}
+
+.side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background-color: #6C63FF;
+    height: 100%;
+    width: 100%;
+}
+
+.side-container img {
+    width: 20.9rem;
+}
+.side-container p {
+    text-align: center;
+    color: white; 
+}
+
+.create-quiz-title {
+    font-size: 2.12rem;
+    margin-top: 4rem;
+}
+
+
+.create-quiz-des {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    opacity: .7;
+}
+
+.signup-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 36px;
+}
+
+main mat-card {
+    width: 420px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}

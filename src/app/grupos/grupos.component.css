@@ -1,0 +1,89 @@
+mat-drawer {
+    width: 17.5rem;
+    height: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1.25rem;
+}
+
+mat-drawer img {
+    height: 2.5rem;
+}
+
+.group-selected {
+    background-color: #6b63ff34;
+    border-radius: .5rem;
+    color: #181649
+}
+
+mat-nav-list a {
+}
+
+.groups-title {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+mat-drawer button {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+mat-drawer-content {
+    overflow-y: scroll;
+    padding: 20px 40px; 
+}
+
+mat-drawer-content button[mat-fab] {
+    position: fixed;
+    right: 10px;
+    bottom: 10px; 
+}
+
+.questions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.welcome {
+    font-size: 1.25rem;
+    padding: 0px;
+    margin: 0px; 
+}
+
+.welcome span {
+    color: #6b63ff;
+    font-weight: 500;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+}
+
+.no-quizzes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    row-gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.no-quizzes img {
+    height: 25rem;
+}
+
+.no-quizzes p {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+

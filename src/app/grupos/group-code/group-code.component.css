@@ -1,0 +1,27 @@
+h1 {
+    margin: 0px; 
+}
+.group-code-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.group-code-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+}
+
+.group-code-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+p {
+    font-size: 3.75rem;
+    padding: 0px; 
+    margin: 0px; 
+    text-align: center;
+    letter-spacing: 1.25rem;
+}
