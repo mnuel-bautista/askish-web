@@ -4,20 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './auth/login/login/login.component';
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GruposComponent } from './grupos/grupos.component';
 import { SignupComponent } from './signup/signup.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
+import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { Firebase } from './firebase/firebase';
-import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
-import { MatLegacyRadioModule as MatRadioModule } from '@angular/material/legacy-radio';
-import { MatLegacyOptionModule as MatOptionModule } from '@angular/material/legacy-core';
-import { MatLegacySelectModule as MatSelectModule } from '@angular/material/legacy-select';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 import { NuevoGrupoComponent } from './grupos/nuevo-grupo/nuevo-grupo.component';
 import { NuevoCuestionarioComponent } from './cuestionarios/nuevo-cuestionario/nuevo-cuestionario.component';
 import { QuizzRoomComponent } from './quizzes/quizz-room/quizz-room.component';
@@ -51,7 +50,6 @@ import { NgChartsModule } from 'ng2-charts';
     MatIconModule,
     MatDialogModule,
     MatRadioModule,
-    MatOptionModule,
     MatSelectModule,
     NgChartsModule, 
   ],
